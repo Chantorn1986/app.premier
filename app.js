@@ -20,5 +20,5 @@ app.use('/ecatalog', require('./routes/ecatalog/ecatalogAdmin'));
 
 
 app.listen(3000,async () => {
-  console.log(`Server is running... http://localhost:${dbConfig.port}`);
+  // console.log(`Server is running... http://localhost:${dbConfig.port}`);
 });
