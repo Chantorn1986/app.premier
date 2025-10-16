@@ -4,27 +4,14 @@ const { v4: uuidv4 } = require("uuid");
 // const db = require('../models/user');
 
 exports.list = async (req, res) => {
-  // try {
-  // const results = await db.findAll();
-  let sql = "SELECT * FROM `eCatalogBrands`";
-  await db.execute(sql,
-    (err, result) => {
-      if (err) {
-        res.status(500).json({
-          message: err.message
-        });
-        return;
-      }
-      res.render('index',{
+  try {
+      res.render('index/index',{
         message: "เรียบร้อย",
-        data: result
       });
-    }
-  )
-  // } catch (err) {
-  //   console.error('Error list data :', err)
-  //   res.json({ message:"List users invalid."}).status(5000);
-  // }
+  } catch (err) {
+    console.error('Error list data :', err)
+    res.json({ message:"List users invalid."}).status(5000);
+  }
 }
 
 exports.getCreate = async (req, res) => {
